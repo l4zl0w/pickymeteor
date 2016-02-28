@@ -1,0 +1,64 @@
+.basicTabs-container .tabs-content-container {
+  background: #FFF;
+  border-radius: 6px;
+  border-top: 0;
+  margin-top: -9px;
+  padding: 25px;
+  box-sizing: border-box;
+}
+
+.basicTabs-container .tabs-content-container > div {
+  display: none;
+}
+
+.tabs-list {
+  height: 55px;
+  width: 100%;
+  background-color: white;
+  position: fixed;
+  bottom: 0;
+  z-index: 4;
+  border-top: 1px solid lightgrey;
+}
+
+.tab-item {
+  float: left;
+  width: 25%;
+  text-align: center;
+  color: darkgrey;
+  font-size: 0.8em;
+}
+
+.tab-item > i {
+  height: 70%;
+  padding-top: 0.2em;
+  font-size: 2em;
+  width: 100%;
+}
+
+.tab-item.active > i {
+  color: slateblue;
+}
+
+.tab-item.active {
+  color: slateblue;
+}
+
+.main-app-header {
+  overflow: scroll;
+  z-index: 9;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  background-color: lightskyblue;
+  height: 44px;
+}
+
+.main-app-header-icon-list > .main-app-header-icon {
+  float: right;
+  width: 10%;
+  padding-top: 0.3em;
+  margin-right: 0.3em;
+  font-size: 1.5em;
+  color: aliceblue;
+}

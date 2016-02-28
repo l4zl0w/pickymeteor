@@ -1,0 +1,53 @@
+.list-of-categories {
+  border: 1px solid lightgrey;
+  padding: 0.5em;
+  margin-bottom: 0.5em;
+  list-style: none;
+  background-color: white;
+}
+
+.list-of-subcategories {
+  list-style: none;
+}
+
+.category-item {
+  border: 1px solid lightgrey;
+  padding: 0.5em;
+  margin-bottom: 0.5em;
+}
+
+.subcategory-item {
+  border-bottom: 1px dotted lightgrey;
+  border-left: 1px dotted lightgrey;
+  border-right: 1px dotted lightgrey;
+  clear: both;
+  box-sizing: border-box;
+  font-size: 1em;
+  font-weight: bold;
+  line-height: 2em;
+  padding-left: 1em;
+}
+
+
+.subcategory-item > i {
+    color: lightgrey;
+    float: right;
+    line-height: 2em;
+    margin-right: 1em;
+}
+
+.challengeselect {
+  display: none;
+}
+
+#create-chase .sub-cat:first-child {
+    border-top: 1px dotted lightgrey;
+}
+
+.subcategory-item > input[type="checkbox"]:checked ~ i.fa-check {
+    color: green;
+}
+
+#list-of-categories-popup {
+  margin-top: 88px;
+}

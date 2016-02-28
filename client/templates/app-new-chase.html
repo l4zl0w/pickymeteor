@@ -1,0 +1,25 @@
+<template name="appNewChase">
+  <section id="list-of-categories-popup">
+    <div>Select four categories</div>
+    <ol class="list-of-categories">
+    {{#each categories}}
+      <li class="category-item">
+        <div>
+          <i class="{{icon}}"></i> {{category}}</div>
+        <ol class="list-of-subcategories">
+          {{#each subcategories}}
+          <li class="subcategory-item" data-cat-id="{{../_id}}"
+            data-sub-cat-id="{{_id}}" data-icon="{{../icon}}"
+            data-sub-cat="{{sub_category}}" data-high-score="{{high_score_label}}"
+            data-low-score="{{low_score_label}}">
+            <input class="challengeselect" type="checkbox" value="{{_id}}">
+            <label for="">{{sub_category}}</label>
+            <i class="fa fa-check"></i>
+          </li>
+          {{/each}}
+        </ol>
+      </li>
+    {{/each}}
+    </ol>
+  </section>
+</template>

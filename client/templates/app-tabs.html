@@ -1,0 +1,76 @@
+<template name="appTabs">
+  <header class="main-app-header">
+    <ul class="main-app-header-icon-list">
+      <li id="settings-button" class="main-app-header-icon">
+        <i class="fa fa-cog"></i>
+      </li>
+      <li id="profile-button" class="main-app-header-icon">
+        <i class="fa fa-user"></i>
+      </li>
+    </ul>
+  </header>
+
+  <section class="page-placeholder">
+
+  </section>
+
+  <section class="page-wrapper">
+    {{> yield}}
+  </section>
+
+  {{#yourTabbedInterface tabs=tabs}}
+
+  {{#tabContent slug="messages"}}
+      <h2>People</h2>
+      <button class="add-people">
+        Add People
+      </button>
+      <h2>People</h2>
+      <button class="add-people">
+        Add People
+      </button>
+      <h2>People</h2>
+      <button class="add-people">
+        Add People
+      </button>
+      <h2>People</h2>
+      <button class="add-people">
+        Add People
+      </button>
+      <h2>People</h2>
+      <button class="add-people">
+        Add People
+      </button>
+      <h2>People</h2>
+      <button class="add-people">
+        Add People
+      </button>
+      <h2>People</h2>
+      <button class="add-people">
+        Add People
+      </button>
+      <h2>People</h2>
+      <button class="add-people">
+        Add People
+      </button>
+
+    {{/tabContent}}
+
+    {{#tabContent slug="imchasing"}}
+      {{> imChasing}}
+    {{/tabContent}}
+
+    {{#tabContent slug="mychases"}}
+      {{> appMyChases}}
+    {{/tabContent}}
+
+    {{#tabContent slug="search"}}
+      <h2>Things</h2>
+      <button class="add-things">
+        Add Things
+      </button>
+    {{/tabContent}}
+
+  {{/yourTabbedInterface}}
+
+</template>

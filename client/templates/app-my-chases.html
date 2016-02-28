@@ -1,0 +1,39 @@
+<template name="appMyChases">
+  <form id="new-chase" class="new-chase">
+    <i class="fa fa-plus-circle"></i>
+    <i id="cancel-new-chase-button" class="fa fa-arrow-left"></i>
+    <input type="text" name="text" placeholder="Type to add new chase" class="new-chase-name"/>
+  </form>
+  <button id="submitnewchase-button" type="submit" form="new-chase" disabled>
+    <i class="fa fa-check"></i>
+  </button>
+  <ol class="chase-list">
+    {{#each myChases}}
+    <li>
+      <div class="chase-summary">
+        <div class="chase-summary-headline">
+            <p><span class="boldtext">{{owner}}</span><span class="smalltext"> {{title}}</span></p>
+        </div>
+        <div class="smalltext next-action-by">
+        {{status}}
+	</div>
+        <div class="smallesttext round-type-list">
+              {{#each rounds}}
+                #{{subCat}}
+              {{/each}}
+                </div>
+        <div id="chase-progress-indicator">
+          {{#each rounds}}
+                                    <div class="{{roundStat}}">
+                            	<i class="{{icon}}"></i>
+            	</div>
+          {{/each}}
+            	            <div id="chase/352-button" class="nav-button">
+	                <i class="fa fa-chevron-right"></i>
+	            </div>
+        	</div>
+    	</div>
+    </li>
+    {{/each}}
+  </ol>
+</template>

@@ -1,0 +1,20 @@
+<template name="appPhotos">
+  <page id="app-profile-photos">
+    {{> appPageHeader}}
+    <i id="submit-fb-pictures" class="fa fa-check headline-button"></i>
+    <div class="row">
+      {{#each pictures.data}}
+        {{#each images}}
+          {{#unless @index}}
+          <div class="col-xs-5">
+            <div class="thumbnail fbpicture">
+              <img src="{{source}}" alt="..." data-id="{{../id}}">
+            </div>
+          </div>
+          {{/unless}}
+        {{/each}}
+      {{/each}}
+    </div>
+    {{pictures.paging.next}}
+  </page>
+</template>

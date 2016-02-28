@@ -1,0 +1,53 @@
+<template name="appSettings">
+  <page id="app-settings">
+  <section id="app-settings-page" class="app-page">
+  {{> appPageHeader}}
+
+  <div id="settings" class="layer ios app-page-container">
+    <div class="section">
+  	<div class="list-group">
+  		<a href="#" id="setlocation" class="list-group-item">
+  			<div class="input-group">
+  				<form id="postcode-form" class="form-horizontal bv-form" novalidate="novalidate"><button type="submit" class="bv-hidden-submit" style="display: none; width: 0px; height: 0px;"></button>
+  					<div class="form-group has-feedback">
+  						<div class="inputGroupContainer">
+  							<div class="input-group">
+  								<span class="input-group-addon">My post code</span>
+  																	<input id="postcode-field" type="text" class="form-control editable" name="postcode" placeholder="Post code" data-bv-field="postcode">
+  															</div><i class="form-control-feedback bv-no-label bv-icon-input-group" data-bv-icon-for="postcode" style="display: none;"></i>
+  						</div>
+  					<small class="help-block" data-bv-validator="stringLength" data-bv-for="postcode" data-bv-result="NOT_VALIDATED" style="display: none;">Please enter a value with valid length</small><small class="help-block" data-bv-validator="regexp" data-bv-for="postcode" data-bv-result="NOT_VALIDATED" style="display: none;">Please enter a value matching the pattern</small></div>
+  				</form>
+  			</div>
+  		<span class="glyphicon glyphicon-info-sign" aria-hidden="true"></span> We will only show your town to other users not your postcode.
+  		</a>
+  		<a href="#" id="gender-selection" class="list-group-item">Interested in:
+  			<div class="btn-group btn-group-justified" role="group" aria-label="...">
+  				<div class="btn-group btn-group-sm" role="group">
+  					<button type="button" class="btn btn-default genderselect" key="match_gender" value="male"><i class="fa fa-male"></i> male</button>
+  				</div>
+  				<div class="btn-group btn-group-sm" role="group">
+  					<button type="button" class="btn btn-default genderselect" key="match_gender" value="female"><i class="fa fa-female"></i> female</button>
+  				</div>
+  			</div>
+  		</a>
+  		<a href="#" id="notification-selection" class="list-group-item">Notifications:
+  			<div class="btn-group btn-group-justified" role="group" aria-label="...">
+  				<div class="btn-group btn-group-sm" role="group">
+  					<button type="button" class="btn btn-default notificationsetting" key="notifications" value="1"><i class="fa fa-circle"></i> on</button>
+  				</div>
+  				<div class="btn-group btn-group-sm" role="group">
+  					<button type="button" class="btn btn-default notificationsetting" key="notifications" value="0"><i class="fa fa-circle-o"></i> off</button>
+  				</div>
+  			</div>
+  		</a>
+  		<a href="#" id="tutorial" class="list-group-item"><i class="fa fa-life-ring"></i> Tutorial</a>
+  		<a href="#" id="contactus" class="list-group-item"><i class="fa fa-comments-o"></i> Get in touch</a>
+  		<a href="#" id="bye" class="list-group-item"><span class="glyphicon glyphicon-log-out" aria-hidden="true"></span> Sign out</a>
+  	</div>
+  </div>
+
+  </div>
+</section>
+</page>
+</template>

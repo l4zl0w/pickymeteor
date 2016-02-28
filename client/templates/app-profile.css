@@ -1,0 +1,17 @@
+.swiper-container {
+    margin-top: 44px;
+}
+
+#edit-profile-button {
+  width: 10%;
+  font-size: 1.5em;
+  color: aliceblue;
+  z-index: 21;
+  position: absolute;
+  top: 0.5em;
+  right: 0;
+}
+
+#app-profile {
+  z-index: 20;
+}

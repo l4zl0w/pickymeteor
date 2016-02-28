@@ -1,0 +1,7 @@
+<template name="appBody">
+  {{#if currentUser}}
+    {{> appTabs}}
+  {{else}}
+    {{> signin}}
+  {{/if}}
+</template>

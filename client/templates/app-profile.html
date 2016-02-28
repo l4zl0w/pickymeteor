@@ -1,0 +1,26 @@
+<template name="appProfile">
+  <page id="app-profile">
+    {{> appPageHeader}}
+    {{#if currentUser}}
+    <i id="edit-profile-button" class="fa fa-pencil"></i>
+    {{/if}}
+    <div class="swiper-container">
+	     <div class="swiper-wrapper">
+         {{#each pictures}}
+          <div class="thumbnail swiper-slide">
+             <img src="{{url}}" />
+          </div>
+         {{/each}}
+       </div>
+      <div class="swiper-pagination"></div>
+      <!--<div class="my-pagination">
+        <span class="swiper-pagination-switch swiper-visible-switch swiper-active-switch"></span>
+      </div>-->
+	  </div>
+    {{#each prof}}
+	  <h5 class="text-center">{{services.facebook.first_name}}, {{age(profile.birthday)}}, {{services.facebook.gender}}</h5>
+    <h5 class="text-center">{{profile.location.name}}</h5>
+    {{#unless currentUser}}<h5 class="text-center">Y miles</h5>{{/unless}}
+    {{/each}}
+  </page>
+</template>

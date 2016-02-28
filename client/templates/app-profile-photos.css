@@ -1,0 +1,46 @@
+#app-profile-photos {
+  z-index: 30;
+}
+
+div.thumbnail {
+  margin-bottom: 0px;
+}
+
+.col-xs-5 {
+    padding-left: 2em;
+    padding-right: 2em;
+    width: 50%;
+    margin-top: 0.25em;
+    margin-bottom: 0.25em;
+}
+
+.row {
+  padding-left: 20px;
+  padding-right: 20px;
+}
+
+.page-headline {
+  padding-top: 0.7em;
+  z-index: 30;
+  font-size: medium;
+  font-weight: bolder;
+  color: aliceblue;
+  //float: left;
+}
+
+.headline-button {
+  font-size: 1.5em;
+  color: aliceblue;
+  z-index: 30;
+  position: fixed;
+  right: 0.7em;
+  top: 0.5em;
+}
+
+#app-profile-photos > .app-page-header {
+  z-index: 30;
+}
+
+page#app-profile-photos {
+  position: static;
+}

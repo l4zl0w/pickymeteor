@@ -1,0 +1,29 @@
+<template name="yourTabbedInterface">
+
+  <div class="yourTabbedInterface-container">
+
+    <!-- These are optional if you want to track parent data (see above). -->
+    {{#if activeTab}}
+      {{trackActiveTab activeTab}}
+    {{/if}}
+
+    {{trackTabs tabs}}
+
+    <!-- You can put the tabs anywhere and style them however you want! -->
+    <ul class="tabs-list">
+      {{#each tabs}}
+        <li class="tab-item {{isActiveTab slug}}"><i class="{{icon}}"></i> {{name}}</li>
+      {{/each}}
+    </ul>
+
+    <!-- Here's where the active tab's content will be displayed. -->
+    <!-- Make sure you include the entire snippet below (with context). -->
+    <div class="tabs-content-container">
+      {{> UI.contentBlock
+          context=__context__
+      }}
+    </div>
+
+  </div>
+
+</template>
