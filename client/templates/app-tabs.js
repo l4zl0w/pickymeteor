@@ -55,7 +55,7 @@ Template.appTabs.events({
   },
   'click #profile-button': function(event, template) {
     //var openPages = Session.get('openPages');
-    $(".yourTabbedInterface-container").css("visibility", "hidden");
+    $(".yourTabbedInterface-container").css("visibility", "none");
     Router.go('/profile/' + Meteor.user()._id);
     //var newPage = $('.page-over')[0];
     //newPage.style.transform = 'translateX('+(-window.innerWidth)+'px)';

@@ -8,8 +8,8 @@ var getFbProfile = function(accessToken,options,user) {
     }, function(error,result) {
       if(error) throw error;
       else {
-        Meteor.users.update({_id: userId}, {$set: {'profile.birthday': result.data.birthday}});
-        Meteor.users.update({_id: userId}, {$set: {'profile.location.name': result.data.location.name}});
+        Meteor.users.update({_id: userId}, {$set: {'profile.birthday': result.data.birthday,
+                                                   'profile.location.name': result.data.location.name }});
         downloadFbPicture(userId,result.data.id,accessToken);
         if(result.data.location.name) {
           //we also need to get coordinates from Google Maps
@@ -20,11 +20,23 @@ var getFbProfile = function(accessToken,options,user) {
               var data = res.data.results;
               if(data[0]) {
                 var geometry = data[0].geometry;
-                Meteor.users.update({_id: userId}, {$set: {'profile.location.geocode.lat': geometry.location.lat}});
-                Meteor.users.update({_id: userId}, {$set: {'profile.location.geocode.lng': geometry.location.lng}});
-                Meteor.users.update({_id: userId}, {$set: {'profile.location.formatted_address': data[0].formatted_address}});
-                Meteor.users.update({_id: userId}, {$set: {'profile.location.location_type': geometry.location_type}});
-              };
+                // Meteor.users.update({_id: userId}, {$set: {'profile.location.geocode.lat': geometry.location.lat}});
+                // Meteor.users.update({_id: userId}, {$set: {'profile.location.geocode.lng': geometry.location.lng}});
+                // Meteor.users.update({_id: userId}, {$set: {'profile.location.formatted_address': data[0].formatted_address}});
+                // Meteor.users.update({_id: userId}, {$set: {'profile.location.location_type': geometry.location_type}});
+                Meteor.users.update({_id: userId}, {$set: {"profile.location.type": "Feature",
+                                                           "profile.location.geometry": {
+                                                             "type": "Point",
+                                                             "coordinates": [geometry.location.lng, geometry.location.lat]
+                                                            },
+                                                           "profile.location.properties": {
+                                                             "name": data[0].formatted_address,
+                                                             "location_type": geometry.location_type
+                                                            }
+                                                          }
+                                                    }
+                );
+              }
           });
         }
       }

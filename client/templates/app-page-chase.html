@@ -1,0 +1,31 @@
+<template name="appChase">
+  <page id="app-chase">
+    {{> appPageHeader}}
+    {{#if own}}
+      {{> myChaseSummary}}
+      {{#if ch.status = "new"}}
+        {{> chaseNew}}
+      {{/if}}
+      {{#if ch.status = "started"}}
+
+      {{/if}}
+    {{else}}
+      {{> appPartProfile}}
+      {{> myChaseSummary}}
+      <!-- need to also check whether I'm already chaging or not,
+          and that this is the first round...-->
+      {{#if ch.status = "started"}}
+        {{#if isFirstRound}}
+          {{#unless isAlreadyChasing}}
+          <div class="btn-group" role="group" aria-label="...">
+            <button type="button" id="join-chase" class="btn btn-default"><i class="fa fa-user-plus"></i> Join chase</button>
+          </div>
+          {{/unless}}
+        {{/if}}
+        {{#if isAlreadyChasing}}
+          {{> appPartResultChart}}
+        {{/if}}
+      {{/if}}
+    {{/if}}
+  </page>
+</template>

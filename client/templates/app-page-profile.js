@@ -6,7 +6,8 @@ Template.appProfile.created = function(){
 }
 
 Template.appProfile.onRendered(function() {
-  $(".yourTabbedInterface-container").css("visibility", "hidden");
+  //$(".yourTabbedInterface-container").css("visibility", "hidden");
+  $(".yourTabbedInterface-container").css("display", "none");
   var page = $('#app-profile');
   page.css('left', window.innerWidth + 'px');
   page.animate({
@@ -44,8 +45,23 @@ Template.appProfile.helpers({
 });
 
 Template.appProfile.events({
+  'click #delete-photo': function(event) {
+    var pictureId = $(event.target).attr("data-id");
+    Images.remove({"_id": pictureId});
+  },
+  'click #edit-location': function(event) {
+    var text = $('#user-location').text();
+    var newElem = '<div class="input-group">' +
+        '<input type="text" class="form-control" placeholder="Enter your post code">' +
+        '<span class="input-group-btn">' +
+          '<button class="btn btn-default" type="button"><i class="fa fa-check"></i></button>' +
+          '<button class="btn btn-default" type="button"><i class="fa fa-times"></i></button>' +
+        '</span>' +
+      '</div>';
+    $('#user-location').replaceWith(newElem);
+  },
   'click #edit-profile-button': function() {
-    Router.go("/editphotos");
+    Router.go("/addphotos");
     /*bootbox.dialog({
       message: "yes",
       title: "Edit my pictures",

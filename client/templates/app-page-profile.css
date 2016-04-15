@@ -1,0 +1,33 @@
+.swiper-container {
+    margin-top: 44px;
+}
+
+#edit-profile-button {
+  width: 10%;
+  font-size: 1.5em;
+  color: aliceblue;
+  z-index: 21;
+  position: absolute;
+  top: 0.5em;
+  right: 0;
+}
+
+#app-profile {
+  z-index: 20;
+}
+
+#delete-photo {
+  position: absolute;
+  bottom: 0.75em;
+  right: 0.75em;
+  font-size: 1.75em;
+  background-color: darkslategray;
+  opacity: 0.8;
+  padding: 0.2em;
+  color: whitesmoke;
+}
+
+#edit-location {
+  font-size: 1.25em;
+  margin-left: 0.5em;
+}

@@ -1,7 +1,5 @@
-Session.set('fbPictures', {});
-
 Template.appPhotos.onRendered(function() {
-  $(".yourTabbedInterface-container").css("visibility", "hidden");
+  $(".yourTabbedInterface-container").css("display", "none");
   var pageTitle = "<div class='page-headline text-center'>Add photos</div>";
   $(".settings-back-button").after(pageTitle);
   var page = $('#app-profile-photos');
@@ -10,6 +8,34 @@ Template.appPhotos.onRendered(function() {
     left: '-=' + window.innerWidth + 'px'},
     100
   );
+  //Reaching the bottom of the window will load more pictures if available
+  $(window).scroll(function() {
+   if($(window).scrollTop() + $(window).height() == $(document).height()) {
+     if(Session.get('nextPageUrl') && Session.get('nextPageUrl') != '') {
+       Meteor.call('getMoreFbPhotos', Session.get('nextPageUrl'), function(error,result) {
+          if(error)
+            alert("Couldn't retrieve more pictures");
+          else {
+            console.log(result.data);
+            var pictureUrls = Session.get('pictureUrls');
+            pictureUrls = pictureUrls.concat(result.data.data);
+            Session.set('pictureUrls', pictureUrls);
+            if(result.data.paging.next)
+              Session.set('nextPageUrl', result.data.paging.next);
+            else
+              Session.set('nextPageUrl','');
+
+          }
+       });
+     }
+   }
+  });
+});
+
+Template.appPhotos.helpers({
+  pictures: function() {
+    return Session.get('pictureUrls');
+  }
 });
 
 Template.appPhotos.events({
@@ -21,9 +47,11 @@ Template.appPhotos.events({
       var fbPicId = $(event.target).data("id");
       if(fbPictures.hasOwnProperty(fbPicId)) {
         delete fbPictures[fbPicId];
-        Session.set('fbPictures', fbPictures);
+        Session.setDefault('fbPictures', fbPictures);
       }
     } else {
+      if(!Session.get('fbPictures'))
+        Session.setDefault('fbPictures',{});
       $(event.currentTarget).addClass("selected");
       $(event.currentTarget).css({"background-color": "lightskyblue"});
       var fbPictures = Session.get("fbPictures");
@@ -42,6 +70,8 @@ Template.appPhotos.events({
           alert("Something went wrong");
         } else {
           Session.set('fbPictures', {});
+          Session.set('pictureUrls', {});
+          Session.set('nextPageUrl', '');
           window.history.back();
           var $current = $('page');
           $current.remove();

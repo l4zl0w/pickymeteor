@@ -8,18 +8,16 @@
 	     <div class="swiper-wrapper">
          {{#each pictures}}
           <div class="thumbnail swiper-slide">
-             <img src="{{url}}" />
+            {{#if currentUser}}<i id="delete-photo" class="fa fa-trash" data-id="{{_id}}"></i>{{/if}}
+            <img src="{{url}}" />
           </div>
          {{/each}}
        </div>
       <div class="swiper-pagination"></div>
-      <!--<div class="my-pagination">
-        <span class="swiper-pagination-switch swiper-visible-switch swiper-active-switch"></span>
-      </div>-->
 	  </div>
     {{#each prof}}
 	  <h5 class="text-center">{{services.facebook.first_name}}, {{age(profile.birthday)}}, {{services.facebook.gender}}</h5>
-    <h5 class="text-center">{{profile.location.name}}</h5>
+    <h5 id="user-location" class="text-center">{{profile.location.name}} {{#if currentUser}}<i id="edit-location" class="fa fa-pencil"></i>{{/if}}</h5>
     {{#unless currentUser}}<h5 class="text-center">Y miles</h5>{{/unless}}
     {{/each}}
   </page>

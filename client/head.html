@@ -1,0 +1,113 @@
+<head>
+  <meta charset="UTF-8" />
+  <meta name="format-detection" content="telephone=no" />
+  <meta name="msapplication-tap-highlight" content="no" />
+  <!-- WARNING: for iOS 7, remove the width=device-width and height=device-height attributes. See https://issues.apache.org/jira/browse/CB-4323 -->
+  <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width, height=device-height" />
+  <title>Picky</title>
+
+  <script id="login-tpl" type="text/template">
+      <div id="login-page">
+          <img id="logo" src="img/label.png">
+          <!--/*<form action="http://52.18.50.26/ajaxlogin" method="post">
+              <div>
+                  <label for="username">Username:</label>
+                  <input type="text" name="username" placeholder="Username" />
+              </div>
+              <div>
+                  <label for="password">Password:</label>
+                  <input type="password" name="password" placeholder="Password" />
+              </div>
+              <div>
+              <input type="submit" value="Login">
+              </div>
+    </form>*/-->
+
+          <div class="btn-group" role="group" aria-label="...">
+              <button id='facebook-login' type="button" class="btn btn-block btn-social btn-facebook">
+                  <i class="fa fa-facebook"></i> Sign in with Facebook
+              </button>
+          </div>
+          <div>
+              <span id="disclaimer"><i class="fa fa-info-circle"></i> We never post or share anything to your Facebook account.</span>
+          </div>
+
+          <!--<button id='facebook-login'>Log in with Facebook</button>
+
+          <fb:login-button scope="public_profile,email,user_birthday,user_location,user_photos,user_relationship_details,user_education_history" onlogin="checkLoginState();">
+          </fb:login-button>
+          <div id="status"></div>
+          -->
+      </div>
+  </script>
+
+  <script id="home-tpl" type="text/template">
+      <div class="header">
+      <div class="mycontainer">
+          <div class="height-100">
+              <div class="pageheader ios">
+                  <div id='back-button'>
+                  </div>
+                  <div>
+                      <h2></h2>
+                  </div>
+                  <div id='settings-button' class='nav-button'>
+                      <i class="fa fa-cog"></i>
+                  </div>
+                  <div id='search-button' class='nav-button'>
+                      <i class="fa fa-search"></i>
+                  </div>
+              </div>
+          </div>
+      </div>
+      </div>
+      <div class="content">
+        <div id='main'>
+          <div id='messages-content'></div>
+          <div id='imchasing-content'></div>
+          <div id='mychases-content'></div>
+          <div id='me-content'></div>
+        </div>
+        <div id="layers">
+        </div>
+      </div>
+      <div class="footer">
+          <div class="mycontainer">
+              <div id='messages' class='navigation'>
+                  <i class="fa fa-envelope"></i> Messages
+              </div>
+              <div id='imchasing' class='navigation'>
+                  <i class="fa fa-star"></i> I'm Chasing
+              </div>
+              <div id='mychases' class='navigation'>
+                  <i class="fa fa-users"></i> My Chases
+              </div>
+              <div id='me' class='navigation'>
+                  <i class="fa fa-user"></i> Me
+              </div>
+          </div>
+      </div>
+  </script>
+
+  
+
+
+<!--    <script>
+window.onload = function() {
+var mySwiper = new Swiper('.swiper-container',{
+  //Your options here:
+  mode:'horizontal',
+  loop: true
+  //etc..
+});
+}
+</script>-->
+
+
+
+
+
+
+
+
+</head>

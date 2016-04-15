@@ -9,14 +9,14 @@
   </button>
   <ol class="chase-list">
     {{#each myChases}}
-    <li>
+    <a href="/chase/{{_id}}"><li>
       <div class="chase-summary">
         <div class="chase-summary-headline">
-            <p><span class="boldtext">{{owner}}</span><span class="smalltext"> {{title}}</span></p>
+            <p><span class="boldtext">{{ownerName}}</span><span class="smalltext"> {{title}}</span></p>
         </div>
         <div class="smalltext next-action-by">
         {{status}}
-	</div>
+	     </div>
         <div class="smallesttext round-type-list">
               {{#each rounds}}
                 #{{subCat}}
@@ -24,16 +24,16 @@
                 </div>
         <div id="chase-progress-indicator">
           {{#each rounds}}
-                                    <div class="{{roundStat}}">
+                                    <div class="{{roundStat}} round-box">
                             	<i class="{{icon}}"></i>
             	</div>
           {{/each}}
-            	            <div id="chase/352-button" class="nav-button">
+            	            <div id="chase/352-button" class="nav-button right-arrow">
 	                <i class="fa fa-chevron-right"></i>
 	            </div>
         	</div>
     	</div>
-    </li>
+    </li></a>
     {{/each}}
   </ol>
 </template>

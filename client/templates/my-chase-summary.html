@@ -1,0 +1,23 @@
+<template name="myChaseSummary">
+  <div class="chase-summary">
+    <div class="chase-summary-headline">
+      <p><span class="smalltext"> {{title}}</span></p>
+    </div>
+    <div class="smalltext next-action-by">
+      {{status}}
+    </div>
+    <div class="smallesttext round-type-list">
+      {{#each rounds}}
+        #{{subCat}}
+      {{/each}}
+    </div>
+    <div id="chase-progress-indicator">
+      {{#each rounds}}
+        <div class="{{activeRound ..}} round-box">
+          <i class="{{icon}}"></i>
+        </div>
+      {{/each}}
+      <div><!-- Need this here as there is a CSS defined on div last child --></div>
+    </div>
+  </div>
+</template>

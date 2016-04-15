@@ -1,0 +1,62 @@
+#app-chase > .btn-group {
+  padding: 1em;
+}
+
+button[type="submit"] {
+  display: none;
+}
+
+.answer-overlay {
+  position: fixed;
+  height: 100%;
+  background-color: white;
+  z-index: 1000;
+  top: 0;
+  left: 0;
+  opacity: 1;
+  padding: 2em;
+  padding-top: 4em;
+}
+
+form.answers {
+  display: none;
+}
+
+.question-group {
+  float: left;
+  padding-right: 3em;
+}
+
+#previous-question {
+  z-index: 1000;
+  position: fixed;
+  bottom: 2em;
+  left: 2em;
+}
+
+#submit-questions {
+  z-index: 1000;
+  position: fixed;
+  bottom: 2em;
+  right: 2em;
+}
+
+question {
+  font-family: Georgia, serif;
+  font-weight: bold;
+  font-size: 1.5em;
+}
+
+.radio > label {
+  font-family: Georgia, serif;
+  font-size: 1.5em;
+  margin: 0.5em;
+}
+
+.close-questions {
+  position: fixed;
+  font-weight: 100;
+  font-size: 2em;
+  top: 0.75em;
+  right: 0.75em;
+}

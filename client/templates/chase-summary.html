@@ -1,0 +1,32 @@
+<template name="chaseSummary">
+  <a href="/chase/{{_id}}">
+  <div class="chase-overview">
+    {{#each thumbnail}}
+    <div class="profile-thumbnail">
+      <img src="{{url}}"/>
+    </div>
+    {{/each}}
+    <div class="chase-summary">
+      <div class="chase-summary-headline">
+        <p><span class="boldtext">{{ownerName}}</span><span class="smalltext"> {{title}}</span></p>
+      </div>
+      <div class="smalltext next-action-by">
+        {{chaseStatus}}
+      </div>
+      <div class="smallesttext round-type-list">
+        {{#each rounds}}
+          #{{subCat}}
+        {{/each}}
+      </div>
+      <div id="chase-progress-indicator">
+        {{#each rounds}}
+          <div class="{{activeRound ..}} round-box">
+            <i class="{{icon}}"></i>
+          </div>
+        {{/each}}
+        <div class="distance smalltext">{{distance}}</div>
+      </div>
+    </div>
+  </div>
+</a>
+</template>

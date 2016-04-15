@@ -1,0 +1,60 @@
+.chase-overview {
+  padding-left: 1em;
+  padding-right: 1em;
+  clear: both;
+  border-top: 1px solid lightgrey;
+  /*margin-top: 0.5em;*/
+  padding-top: 0.5em;
+  height: 6em;
+}
+
+.chase-overview:first-child {
+  border-top: 0;
+}
+
+.chase-overview > .chase-summary {
+  float: left;
+  width: 80%;
+  clear: none;
+  margin-bottom: 0;
+  margin: 0;
+  margin-left: 0.5em;
+  border-bottom: 0;
+}
+
+.active-round-colour {
+  background-color: lightskyblue;
+}
+
+.chase-summary #chase-progress-indicator > .active-round-colour > i {
+  color: whitesmoke;
+}
+
+.profile-thumbnail {
+  padding: 2px;
+  margin-top: 0.5em;
+  /*margin-bottom: 20px;*/
+  /*line-height: 1.42857143;*/
+  background-color: #fff;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  -webkit-transition: border .2s ease-in-out;
+  /*-o-transition: border .2s ease-in-out;*/
+  transition: border .2s ease-in-out;
+  float: left;
+  /*width: 5em;*/
+}
+
+.profile-thumbnail > img {
+  width: 4em;
+  /*margin: 0.05em;*/
+}
+
+.distance {
+  float: right;
+  color: darkgrey;
+  margin-top: 0.6em;
+  width: 13%;
+  text-align: right;
+
+}

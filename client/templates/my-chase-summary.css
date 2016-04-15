@@ -1,0 +1,12 @@
+#app-chase > .chase-summary {
+  padding-left: 2em;
+  padding-right: 2em;
+}
+
+.active-round-colour {
+  background-color: lightskyblue;
+}
+
+.chase-summary #chase-progress-indicator > .active-round-colour > i {
+  color: whitesmoke;
+}

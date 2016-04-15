@@ -3,7 +3,7 @@
     {{> appPageHeader}}
     <i id="submit-fb-pictures" class="fa fa-check headline-button"></i>
     <div class="row">
-      {{#each pictures.data}}
+      {{#each pictures}}
         {{#each images}}
           {{#unless @index}}
           <div class="col-xs-5">
@@ -15,6 +15,5 @@
         {{/each}}
       {{/each}}
     </div>
-    {{pictures.paging.next}}
   </page>
 </template>

@@ -1,0 +1,16 @@
+<template name="appPartProfile">
+  <div class="swiper-container">
+     <div class="swiper-wrapper">
+       {{#each pictures}}
+        <div class="thumbnail swiper-slide">
+          <img src="{{url}}" />
+        </div>
+       {{/each}}
+     </div>
+    <div class="swiper-pagination"></div>
+  </div>
+  {{#if acc}}
+    <h5 class="text-center">{{acc.services.facebook.first_name}}, {{age(acc.profile.birthday)}}, {{acc.services.facebook.gender}}</h5>
+    <h5 id="user-location" class="text-center">{{acc.profile.location.name}}</h5>
+  {{/if}}
+</template>

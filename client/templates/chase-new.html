@@ -1,0 +1,32 @@
+<template name="chaseNew">
+  {{#each rounds}}
+  <div class="btn-group btn-group-justified" role="group" aria-label="...">
+    <div class="btn-group" role="group">
+      <button type="button" header="no" class="btn btn-default answer-round" data-chase="{{../_id}}" data-rnd="{{subCatId}}" {{disabledRoundButton}}>
+        <i class="fa fa-chevron-right"></i> {{subCat}}
+      </button>
+    </div>
+    <form id="{{subCatId}}" class="answers" action="" method="post">
+    {{#each questions}}
+      <div class="question-group">
+        <question>{{question}}</question>
+        {{#each answers}}
+          <div class="radio">
+            <label><input type="radio" name="{{../_id}}" data-rnd={{../sub_cat_id}} data-ansid="{{answer_id}}">{{answer}}</label>
+          </div>
+        {{/each}}
+      </div>
+    {{/each}}
+      <button type="submit" class="btn btn-default" disabled>OK</button>
+      <i class="fa fa-times close-questions"></i>
+    </form>
+  </div>
+  {{/each}}
+  <div class="btn-group btn-group-justified" role="group" aria-label="...">
+    <div class="btn-group" role="group">
+      <button id="start-chase" type="button" header="no" class="btn btn-default" {{disabledChaseStartButton}}>
+        <i class="fa fa-flag"></i> Start the chase
+      </button>
+    </div>
+  </div>
+</template>
